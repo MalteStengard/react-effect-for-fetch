@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-
+import UserList from "./components/UsersList";
 
 function UsersSection() {
 
@@ -14,18 +14,25 @@ function UsersSection() {
 
   console.log(data)
 
+  // return (
+  //   <section>
+  //     <h2>Advice Section</h2>
+  //     <ul>
+  //       {data.map(item => (
+  //         <li key={item.id} style={{ backgroundColor: item.favouriteColour }}>
+  //           <h2>{item.firstName} {item.lastName}</h2>
+  //           <p>{item.email}</p>
+  //           <img src={item.profileImage} alt={`${item.firstName} ${item.lastName}`} />
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   </section>
+  // );
+
   return (
     <section>
       <h2>Advice Section</h2>
-      <ul>
-        {data.map(item => (
-          <li key={item.id} style={{ backgroundColor: item.favouriteColour }}>
-            <h2>{item.firstName} {item.lastName}</h2>
-            <p>{item.email}</p>
-            <img src={item.profileImage} alt={`${item.firstName} ${item.lastName}`} />
-          </li>
-        ))}
-      </ul>
+      <UserList userList = {data} />
     </section>
   );
 }
